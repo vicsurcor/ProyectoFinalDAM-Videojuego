@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53756ceffe706c4cbbb80e89ded02a2, type: 3}
+  m_Name: LayoutBuilderMapGen
+  m_EditorClassIdentifier: 
+  normalPlatforms:
+  - {fileID: 1442961892973212899, guid: a6c6538d756d88b46b55791f51363177, type: 3}
+  - {fileID: 7378033352946113610, guid: 18197aae177ff0246a21d92ac9d99eb2, type: 3}
+  - {fileID: 3810805468572730250, guid: fddf5243982119d44b38535fdee3e79b, type: 3}
+  mergePlatforms:
+  - {fileID: 7501713085307634064, guid: f6f7f672f3480f34ead4030eb5aecb2a, type: 3}
+  changePlatforms:
+  - {fileID: 7867041172412837767, guid: 7115cb073d5daf142bcf53f78ddc1814, type: 3}
+  numberOfBranches: 1
+  mapLength: 5
