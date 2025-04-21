@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/LayoutBuilderTest/LayoutBuilder.unity
+- path: Assets/Scenes/PlayerMovementTest/PlayerMovement.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
