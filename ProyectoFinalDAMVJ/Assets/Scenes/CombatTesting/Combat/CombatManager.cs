@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -17,10 +18,12 @@ public class CombatManager : MonoBehaviour
     private EnemyCombat enemy;
     private Transform playerStart;
     private List<Transform>  enemiesStart;
+    private TextMeshProUGUI battlelog;
 
     void Start()
     {
         state = CombatState.START;
+        battlelog  = FindObjectsOfType<TextMeshProUGUI>().Where(x => x.name == "BattleLog").First();
         playerStart = FindObjectsOfType<Transform>().Where(t => t.name == "PlayerLocation").First();
         enemiesStart = FindObjectsOfType<Transform>().Where(t => t.name == "EnemyLocation").OrderBy(t => t.position.x).ToList();
     
@@ -88,7 +91,7 @@ public class CombatManager : MonoBehaviour
         // For example, wait until the player selects “Attack” or “Defend”.
         //yield return new WaitUntil(() => player.actionCompleted);
         yield return new WaitForSeconds(0.5f);
-        player.InstantKill(enemy);
+        player.InstantKill(enemy, battlelog);
         // Optionally, process player input results here (damage calculations, animations, etc.)
         yield return new WaitForSeconds(0.5f);
     }
@@ -97,7 +100,7 @@ public class CombatManager : MonoBehaviour
     {
         // Simple enemy logic: attack after a short delay.
         yield return new WaitForSeconds(1f);
-        enemy.PerformAttack(player);
+        enemy.PerformAttack(player, battlelog);
         yield return new WaitForSeconds(0.5f);
     }
 
@@ -105,11 +108,13 @@ public class CombatManager : MonoBehaviour
     {
         if (state == CombatState.WON)
         {
+            battlelog.text += "\nVictory!";
             Debug.Log("Victory!");
             // Trigger victory animations, sounds, or transitions.
         }
         else if (state == CombatState.LOST)
         {
+            battlelog.text += "\nDefeat!";
             Debug.Log("Defeat!");
             // Trigger defeat logic.
         }

@@ -122,75 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1022064224
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1022064226}
-  - component: {fileID: 1022064225}
-  m_Layer: 0
-  m_Name: Combat
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1022064225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022064224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da3cd42e5466b7a4b85fb071491ecd95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  playerPrefab: {fileID: 0}
-  enemyPrefab: {fileID: 0}
-  numberOfEnemies: 0
---- !u!4 &1022064226
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022064224}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.98, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1414345395 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 352385380937249779, guid: 5a121b9b496a2ac42abe1322ab6fd913, type: 3}
-  m_PrefabInstance: {fileID: 5357755088586048026}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1414345397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414345395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da3cd42e5466b7a4b85fb071491ecd95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  playerPrefab: {fileID: 647291328216516863, guid: c7fc5869e9de08d418552867fe8005b7, type: 3}
-  enemyPrefab: {fileID: 8148308554824674262, guid: 075c63735dae0cf4b84cccb1ea669a1f, type: 3}
-  numberOfEnemies: 2
 --- !u!1 &1721229413
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 1721229413}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.94, z: -10}
+  m_LocalPosition: {x: 0, y: 4.36, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -380,22 +311,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2569406563649849084, guid: 5a121b9b496a2ac42abe1322ab6fd913, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 8148308554824674262, guid: 075c63735dae0cf4b84cccb1ea669a1f, type: 3}
+    - target: {fileID: 2569406563649849084, guid: 5a121b9b496a2ac42abe1322ab6fd913, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 647291328216516863, guid: c7fc5869e9de08d418552867fe8005b7, type: 3}
+    - target: {fileID: 2569406563649849084, guid: 5a121b9b496a2ac42abe1322ab6fd913, type: 3}
+      propertyPath: numberOfEnemies
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4418975101558607161, guid: 5a121b9b496a2ac42abe1322ab6fd913, type: 3}
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6131741118413338904, guid: 5a121b9b496a2ac42abe1322ab6fd913, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 352385380937249779, guid: 5a121b9b496a2ac42abe1322ab6fd913, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1414345397}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a121b9b496a2ac42abe1322ab6fd913, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1721229416}
-  - {fileID: 1022064226}
   - {fileID: 5357755088586048026}
