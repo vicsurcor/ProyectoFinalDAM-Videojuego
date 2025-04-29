@@ -6,6 +6,7 @@ public class PlayerCombat : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public bool actionCompleted; // Flag to sync with the CombatManager
+    public bool isDefending = false;
 
     void Awake()
     {
@@ -31,8 +32,34 @@ public class PlayerCombat : MonoBehaviour
     
     public void TakeDamage(int damage, TextMeshProUGUI battlelog)
     {
-        currentHealth -= damage;
-        battlelog.text += $"\nPlayer takes {damage} damage. Remaining Health: {currentHealth}";
-        Debug.Log($"Player takes {damage} damage. Remaining Health: {currentHealth}");
+        if (isDefending == false)
+        {
+            currentHealth -= damage;
+            battlelog.text += $"\nPlayer takes {damage} damage. Remaining Health: {currentHealth}";
+            Debug.Log($"Player takes {damage} damage. Remaining Health: {currentHealth}");
+        }
+        else if (isDefending == true)
+        {
+            currentHealth -= damage/2;
+            battlelog.text += $"\nPlayer takes {damage/2} damage while blocking. Remaining Health: {currentHealth}";
+            Debug.Log($"Player takes {damage} damage while blocking. Remaining Health: {currentHealth}");
+        }
+        
+    }
+
+    public void Defend (TextMeshProUGUI battlelog)
+    {
+        if (isDefending == false)
+        {
+            battlelog.text += $"\nPlayer blocking.";
+            Debug.Log($"Player blocking.");
+            isDefending = true;
+            actionCompleted = true;
+        }
+        else if (isDefending == true)
+        {
+            isDefending = false;
+        }
+        
     }
 }

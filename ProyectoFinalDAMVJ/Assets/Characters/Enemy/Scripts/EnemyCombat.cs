@@ -5,6 +5,7 @@ public class EnemyCombat : MonoBehaviour
 {
     public int maxHealth = 80;
     public int currentHealth;
+    public bool actionCompleted = false;
 
     void Awake()
     {
@@ -13,9 +14,18 @@ public class EnemyCombat : MonoBehaviour
 
     public void PerformAttack(PlayerCombat player, TextMeshProUGUI battlelog)
     {
-        int damage = 15; // example damage value
-        player.TakeDamage(damage, battlelog);
-        Debug.Log($"Enemy attacks! Player Health: {player.currentHealth}");
+        if (actionCompleted == false)
+        {
+            int damage = 15; // example damage value
+            player.TakeDamage(damage, battlelog);
+            Debug.Log($"Enemy attacks! Player Health: {player.currentHealth}");
+            actionCompleted = true;
+        }
+        else if (actionCompleted == true)
+        {
+            Debug.Log("Trying to attack outside turn");
+        }
+        
     }
     
     public void TakeDamage(int damage, TextMeshProUGUI battlelog)
