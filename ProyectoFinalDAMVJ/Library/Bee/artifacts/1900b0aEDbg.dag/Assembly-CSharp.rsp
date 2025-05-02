@@ -418,7 +418,6 @@
 "Assets/Characters/Player/Scripts/PlayerMovement.cs"
 "Assets/Scene/Scripts/MapGenerator.cs"
 "Assets/Scene/Scripts/PlatformMap.cs"
-"Assets/Scenes/CombatTesting/Combat/CombatManager.cs"
 "Assets/Scenes/PlayerMovementTest/Scripts/EncounterScript.cs"
 -langversion:9.0
 /deterministic
